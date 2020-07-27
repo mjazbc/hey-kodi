@@ -38,6 +38,8 @@ def playNextEpisode(title):
         
         subprocess.call(['texturecache.py', 'play', path])
 
+        subprocess.call(['texturecache.py', 'watched', 'tvshows', 'backup', './automation/watchedbackup.json', title])
+
 
 def getNextEpisodePath(title):
 

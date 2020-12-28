@@ -17,5 +17,5 @@ def getLast(file_path):
                 play_next.playNextEpisode(title)
 
 if __name__== "__main__":
-       watchedfile = '/storage/automation/watchedbackup.json'
+       watchedfile = '.cache/watched.json'
        getLast(watchedfile)

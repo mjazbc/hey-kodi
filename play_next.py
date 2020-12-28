@@ -2,7 +2,7 @@ import json
 import subprocess
 import sys
 
-watchedfile = '/storage/automation/watchedbackup.json'
+watchedfile = '.cache/watched.json'
 
 def findNextEpisode(json_data):
 
@@ -31,12 +31,12 @@ def findEpisodePath(nextEpisode, episodes):
 
 def playNextEpisode(title):
 
-        subprocess.call(['texturecache.py', 'watched', 'tvshows', 'backup', './automation/watchedbackup.json', title])
+        subprocess.call(['texturecache.py', 'watched', 'tvshows', 'backup', watchedfile, title])
 
         path = getNextEpisodePath(title)
 
         subprocess.call(['texturecache.py', 'play', path])
-        subprocess.call(['texturecache.py', 'watched', 'tvshows', 'backup', './automation/watchedbackup.json', title])
+        subprocess.call(['texturecache.py', 'watched', 'tvshows', 'backup', watchedfile, title])
 
 def getNextEpisodePath(title):
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="hey.kodi" name="Hey Kodi" version="0.9" provider-name="mjazbc">
+<addon id="script.module.heykodi" name="Hey Kodi" version="0.9" provider-name="mjazbc">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
   </requires>

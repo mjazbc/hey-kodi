@@ -1,5 +1,4 @@
 import json
-import os
 import subprocess
 import sys
 
@@ -31,15 +30,13 @@ def findEpisodePath(nextEpisode, episodes):
                         return episode[u'file']
 
 def playNextEpisode(title):
-        
+
         subprocess.call(['texturecache.py', 'watched', 'tvshows', 'backup', './automation/watchedbackup.json', title])
 
         path = getNextEpisodePath(title)
-        
+
         subprocess.call(['texturecache.py', 'play', path])
-
         subprocess.call(['texturecache.py', 'watched', 'tvshows', 'backup', './automation/watchedbackup.json', title])
-
 
 def getNextEpisodePath(title):
 
@@ -63,6 +60,7 @@ def getNextEpisodePath(title):
         file = findEpisodePath(nextEpisode, episodes)
         if file:
                 return file
+                exit(0)
 
         #if no next episode in current season, try first episode of next season
         nextEpisode = formatEpisode(s + 1, 1)
@@ -70,10 +68,11 @@ def getNextEpisodePath(title):
         file = findEpisodePath(nextEpisode, episodes)
         if file:
                 return file
+                exit(0)
 
-        raise ValueError('Next episode not found')      
+
+        raise ValueError('Next episode not found')
 
 if __name__== "__main__":
         title = sys.argv[1]
         playNextEpisode(title)
-       

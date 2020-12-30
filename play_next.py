@@ -60,7 +60,6 @@ def getNextEpisodePath(title):
         file = findEpisodePath(nextEpisode, episodes)
         if file:
                 return file
-                exit(0)
 
         #if no next episode in current season, try first episode of next season
         nextEpisode = formatEpisode(s + 1, 1)
@@ -68,7 +67,6 @@ def getNextEpisodePath(title):
         file = findEpisodePath(nextEpisode, episodes)
         if file:
                 return file
-                exit(0)
 
 
         raise ValueError('Next episode not found')
